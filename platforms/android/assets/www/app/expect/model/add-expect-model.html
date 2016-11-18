@@ -5,16 +5,16 @@
 		</div>
 		<h1 class="title model-title">添加目标</h1>
 		<div class="buttons">
-	  		<button class="button button-clear button-positive" ng-click="hideDialog()">提交</button>
+	  		<button class="button button-clear button-positive" ng-click="hideDialog(data.newExpect)">提交</button>
 		</div>
 	</ion-header-bar>
 	<ion-content >
 		<div class="list">
 			<label class="item item-input">
-				<input type="text" placeholder="目标标题">
+				<input type="text" placeholder="目标标题" ng-model="data.newExpect.title">
 			</label>
 			<label class="item item-input">
-				<textarea placeholder="目标详细描述" class="common-text"></textarea>
+				<textarea placeholder="目标详细描述" class="common-text" ng-model="data.newExpect.desc"></textarea>
 			</label>
 		</div>  
 	</ion-content>

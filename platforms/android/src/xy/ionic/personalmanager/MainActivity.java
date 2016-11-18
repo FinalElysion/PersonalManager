@@ -17,7 +17,7 @@
        under the License.
  */
 
-package com.ionicframework.personalmanager520238;
+package xy.ionic.personalmanager;
 
 import android.os.Bundle;
 import org.apache.cordova.*;

@@ -1,12 +1,12 @@
 
 {
-  "name": "My Ionic App",
-  "short_name": "My Ionic App",
+  "name": "Personal Manager",
+  "short_name": "Personal Manager",
   "start_url": "index.html",
   "display": "standalone",
   "icons": [{
-    "src": "icon.png",
-    "sizes": "512x512",
+    "src": "lm.png",
+    "sizes": "200x200",
     "type": "image/png"
   }]
 }

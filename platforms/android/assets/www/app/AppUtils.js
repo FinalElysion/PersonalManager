@@ -20,6 +20,11 @@ angular.module('AppUtils', [])
 		return prefix + t;
 	};
 
-
-
+	this.generateResult = function(success,msg,data){
+		return {
+			success:success,
+			msg:msg,
+			data:data
+		}
+	}
 });

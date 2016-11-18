@@ -7,14 +7,14 @@
 		<div class="list list-inset">
 			<label class="item item-input">
 				<i class="icon ion-ios-person-outline placeholder-icon"></i>
-				<input type="text" placeholder="用户名" ng-model="data.username">
+				<input type="text" placeholder="用户名" ng-model="data.user.name">
 			</label>
 			<label class="item item-input">
 				<i class="icon ion-ios-locked-outline placeholder-icon"></i>
-			 	<input type="password" placeholder="密码" ng-model="data.password">
+			 	<input type="password" placeholder="密码" ng-model="data.user.password">
 			</label>
 
-			<button class="button button-block button-positive" ng-click="login(data)">登陆</button>
+			<button class="button button-block button-positive" ng-click="login(data.user)">登陆</button>
 			
 			<div class="row">
 				<div class="col"></div>
@@ -26,7 +26,7 @@
 				
 		<div class="row login-other">
 			<div class="col center-position">
-				<button class="button button-outline button-positive">注册</button>
+				<button class="button button-outline button-positive" ng-click="showRegist()">注册</button>
 			</div>
 		</div>
 			
