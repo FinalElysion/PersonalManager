@@ -13,4 +13,9 @@ angular.module('app.services')
 		currentData.push(data);
 		return currentData;
 	}
+
+	
+	this.removeCostData = function(data){
+		CommonUtils.removeArrayItem(currentData,data);
+	};
 }]);

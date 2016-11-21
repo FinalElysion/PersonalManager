@@ -21,10 +21,10 @@
 			</a>
 
 		  
-		    <ion-delete-button class="ion-minus-circled" ng-click="items.splice($index, 1)">
+		    <ion-delete-button class="ion-minus-circled" ng-click="deleteStudy(studyItem)">
 		    </ion-delete-button>
 		   	
-		   	<ion-reorder-button class="ion-edit" on-reorder="reorderItem(item, $fromIndex, $toIndex)">
+		   	<ion-reorder-button class="ion-edit" ng-click="showEditStudyDialog(studyItem, $fromIndex, $toIndex)">
    			</ion-reorder-button>
 
 		  </ion-item>
