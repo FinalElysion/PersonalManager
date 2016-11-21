@@ -1,0 +1,25 @@
+<ion-modal-view>
+	<ion-header-bar>
+		<div class="buttons">
+	  		<button class="button button-clear button-positive" ng-click="hideEditStudyDialog()">取消</button>
+		</div>
+		<h1 class="title model-title">添加支出</h1>
+		<div class="buttons">
+	  		<button class="button button-clear button-positive" ng-click="saveEditStudy(data.editStudy)">保存</button>
+		</div>
+	</ion-header-bar>
+	<ion-content >
+		<div class="list">
+			<label class="item item-input">
+				<input type="text" placeholder="学习的种类" ng-model="data.editStudy.title">
+			</label>
+			<label class="item item-input">
+				<input type="date" placeholder="学习日期" ng-model="data.editStudy.date">
+			</label>
+			<label class="item item-input">
+				<textarea placeholder="学习描述" class="common-text" ng-model="data.editStudy.desc"></textarea>
+			</label>
+			
+		</div>  
+	</ion-content>
+</ion-modal-view>
