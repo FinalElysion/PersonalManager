@@ -16,29 +16,27 @@ angular.module('app.services', [])
 	costData:[{
 		money:20,
 		desc:'家乐园吃饭',
-		date:'2016-11-1'
+		date:new Date()
 	},{
 		money:30,
 		desc:'叫外卖',
-		date:'2016-11-2'
+		date:new Date()
 	}],
 	studyData:[{
 		title:'Java',
 		desc:'多线程',
-		date:'2016-11-1'
+		date:new Date()
 	},{
 		title:'ionic',
 		desc:'界面',
-		date:'2016-11-2'
+		date:new Date()
 	}],
 	articleData:[{
-		title:'上班',
 		desc:'早到',
-		date:'2016-11-1'
+		date:new Date()
 	},{
-		title:'落班',
 		desc:'没准时落班',
-		date:'2016-11-2'
+		date:new Date()
 	}],
 	FGOData:{
 		cailiao:[{

@@ -5,11 +5,19 @@ angular.module('app.services')
 	
 	this.getExpectData = function(){
 		return currentData;
-	}
+	};
 
 	this.addExpectData = function(data){
 		currentData.push(data);
 		return currentData;
-	}
+	};
 
+	this.removeExpectData = function(data){
+		CommonUtils.removeArrayItem(currentData,data);
+	};
+
+
+	this.editExpectData = function(data){
+		CommonUtils.removeArrayItem(currentData,data);
+	};
 }]);

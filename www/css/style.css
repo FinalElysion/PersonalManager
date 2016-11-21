@@ -30,6 +30,10 @@
 	height:200px;
 }
 
+.common-btn{
+    cursor: pointer;
+}
+
 .view-module-tltle{
 	text-align: center!important;
 }
@@ -65,3 +69,7 @@
     font-weight: bold;
 }
     
+
+.my-divider-list .item-content {
+    padding: 0px 0px 0px 0px !important;
+}

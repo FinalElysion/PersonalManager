@@ -6,11 +6,15 @@ angular.module('app.services')
 	
 	this.getCostData = function(){
 		return currentData;
-	}
+	};
 
 
 	this.addCostData = function(data){
 		currentData.push(data);
 		return currentData;
-	}
+	};
+
+	this.removeCostData = function(data){
+		CommonUtils.removeArrayItem(currentData,data);
+	};
 }]);
