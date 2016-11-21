@@ -3,7 +3,8 @@ angular.module('app.controllers')
 .controller('CostCtrl', ['$scope', 'CostService', '$ionicModal',function($scope, CostService, $ionicModal) {
 	$scope.data = {};
 	$scope.data.costData = CostService.getCostData(); 
-
+	$scope.data.newCost = {money:'',desc:'',date:''};
+	
 	//init model
 	$ionicModal.fromTemplateUrl('app/cost/model/add-cost-model.html', {
 		scope: $scope,
@@ -12,9 +13,15 @@ angular.module('app.controllers')
 		$scope.addCostModal = modal;
 	});
 
-
-	$scope.addCost = function(){
+	$scope.showCost = function(){
 		$scope.addCostModal.show();
+	}
+
+	$scope.addCost = function(data){
+		CostService.addCostData(data);
+
+		$scope.data.newCost = {money:'',desc:'',date:''};
+		$scope.hideDialog();
 	};
 
 	$scope.hideDialog = function() {

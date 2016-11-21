@@ -2,7 +2,15 @@ angular.module('app.services')
 
 .service('CostService', ['$state','AppConstant', function ($state,AppConstant) {
 	
+	var currentData = AppConstant.costData;
+	
 	this.getCostData = function(){
-		return AppConstant.costData;
+		return currentData;
+	}
+
+
+	this.addCostData = function(data){
+		currentData.push(data);
+		return currentData;
 	}
 }]);

@@ -22,6 +22,15 @@ angular.module('app.services', [])
 		desc:'叫外卖',
 		date:'2016-11-2'
 	}],
+	studyData:[{
+		title:'Java',
+		desc:'多线程',
+		date:'2016-11-1'
+	},{
+		title:'ionic',
+		desc:'界面',
+		date:'2016-11-2'
+	}],
 	FGOData:{
 		cailiao:[{
 			desc0:'弓之修炼场',
@@ -62,7 +71,9 @@ angular.module('app.services', [])
  	 */
  	this.initAppInfo = function(){
  		console.log('init my app');
- 		$state.go('login')
+ 		//use for dev
+ 		$state.go('app.expect');
+ 		//$state.go('login');
  	};
 
 }]);

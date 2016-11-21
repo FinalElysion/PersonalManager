@@ -5,19 +5,19 @@
 		</div>
 		<h1 class="title model-title">添加支出</h1>
 		<div class="buttons">
-	  		<button class="button button-clear button-positive" ng-click="addCost(data.newCost)">提交</button>
+	  		<button class="button button-clear button-positive" ng-click="addArticle(data.newArticle)">提交</button>
 		</div>
 	</ion-header-bar>
 	<ion-content >
 		<div class="list">
 			<label class="item item-input">
-				<input type="number" placeholder="支出金额" ng-model="data.newCost.money">
+				<input type="number" placeholder="标题" ng-model="data.newArticle.title">
 			</label>
 			<label class="item item-input">
-				<input type="date" placeholder="支出日期" ng-model="data.newCost.date">
+				<input type="date" placeholder="日期" ng-model="data.newArticle.date">
 			</label>
 			<label class="item item-input">
-				<textarea placeholder="支出明细" class="common-text" ng-model="data.newCost.desc"></textarea>
+				<textarea placeholder="主要内容" class="common-text" ng-model="data.newArticle.desc"></textarea>
 			</label>
 			
 		</div>  

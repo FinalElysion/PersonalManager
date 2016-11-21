@@ -7,7 +7,7 @@
 
 	<!--顶部导航菜单右边按钮-->
  	<ion-nav-buttons side="right">
-      	<button class="button button-icon button-clear ion-plus-round" ng-click="addCost()">
+      	<button class="button button-icon button-clear ion-plus-round" ng-click="showCost()">
     	</button>
     </ion-nav-buttons>
 
@@ -21,7 +21,7 @@
 					<span class="expect-label">支出明细:</span> <span class="expect-desc">{{costItem.desc}}</span>
 				</a>
 				<a class="item" >
-					<span class="expect-label">支出日期:</span> <span class="expect-desc">{{costItem.date}}</span>
+					<span class="expect-label">支出日期:</span> <span class="expect-desc">{{costItem.date|date:'yyyy-M-dd'}}</span>
 				</a>
 	        </div>
 

@@ -76,8 +76,8 @@ angular.module('app', ['ionic', 'app.controllers','app.services','AppUtils'])
         url: '/study',
      	views: {
         	'menuContent': {
-          	templateUrl: 'app/study/study.html'//,
-          //
+          	templateUrl: 'app/study/study.html',
+          	controller: 'StudyCtrl'
         }
       }
     })
@@ -86,7 +86,8 @@ angular.module('app', ['ionic', 'app.controllers','app.services','AppUtils'])
 	    url: '/article',
 	    views: {
 	      	'menuContent': {
-	        	templateUrl: 'app/article/article.html'
+	        	templateUrl: 'app/article/article.html',
+	        	controller: 'ArticleCtrl'
 	     	}
 	    }
   	});

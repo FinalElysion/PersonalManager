@@ -1,12 +1,31 @@
 <ion-view view-title="学习">
-  <ion-nav-buttons side="left">
-    <button class="button button-icon button-clear ion-navicon-round" menu-toggle="left">
-    </button>
-  </ion-nav-buttons>
-  
-	<ion-content >
-  		学习
-	</ion-content>
+	<!--顶部导航菜单左边按钮 menu定义了全局，这里忽略
+  	<ion-nav-buttons side="left">
+    	<button class="button button-icon button-clear ion-navicon-round" menu-toggle="left">
+    	</button>
+ 	</ion-nav-buttons>-->
 
+	<!--顶部导航菜单右边按钮-->
+ 	<ion-nav-buttons side="right">
+      	<button class="button button-icon button-clear ion-plus-round" ng-click="showAddStudy()">
+    	</button>
+    </ion-nav-buttons>
+
+	<ion-content >
+  		<div class="list">
+  			<div ng-repeat="studyItem in data.studyData">
+				<div class="item item-divider">
+					<span class="expect-label">支出金额:</span> <span class="expect-desc">{{studyItem.title}}</span>
+				</div>
+				<a class="item" >
+					<span class="expect-label">支出明细:</span> <span class="expect-desc">{{studyItem.desc}}</span>
+				</a>
+				<a class="item" >
+					<span class="expect-label">支出日期:</span> <span class="expect-desc">{{studyItem.date|date:'yyyy-M-dd'}}</span>
+				</a>
+	        </div>
+
+		</div>
+	</ion-content>
 </ion-view>
 	

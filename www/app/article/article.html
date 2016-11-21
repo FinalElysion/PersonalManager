@@ -1,13 +1,30 @@
-<ion-view view-title="文章">
-  <ion-nav-buttons side="left">
-    <button class="button button-icon button-clear ion-navicon-round" menu-toggle="left">
-    </button>
-  </ion-nav-buttons>
-  
+<ion-view view-title="吐槽">
+	<!--顶部导航菜单左边按钮 menu定义了全局，这里忽略
+  	<ion-nav-buttons side="left">
+    	<button class="button button-icon button-clear ion-navicon-round" menu-toggle="left">
+    	</button>
+ 	</ion-nav-buttons>-->
+
+	<!--顶部导航菜单右边按钮-->
+ 	<ion-nav-buttons side="right">
+      	<button class="button button-icon button-clear ion-plus-round" ng-click="showArticle()">
+    	</button>
+    </ion-nav-buttons>
+
 	<ion-content >
-  		文章
+  		<div class="list">
+  			<div ng-repeat="articleItem in data.articleData">
+				<div class="item item-divider">
+					<span class="expect-label">标题:</span> <span class="expect-desc">{{articleItem.title}}</span>
+				</div>
+				<a class="item" >
+					<span class="expect-label">主要内容:</span> <span class="expect-desc">{{articleItem.desc}}</span>
+				</a>
+				<a class="item" >
+					<span class="expect-label">日期:</span> <span class="expect-desc">{{articleItem.date|date:'yyyy-M-dd'}}</span>
+				</a>
+	        </div>
+
+		</div>
 	</ion-content>
-
-
 </ion-view>
-	
