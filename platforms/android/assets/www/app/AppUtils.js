@@ -1,7 +1,7 @@
 angular.module('AppUtils', [])
 
 .service('CommonUtils', function() {
-	
+	CommonUtils = this;
 	/**
 	 * 生成带前缀的随机Id并返回
 	 * 
@@ -20,6 +20,7 @@ angular.module('AppUtils', [])
 		return prefix + t;
 	};
 
+	//生成一个公用的结果对象
 	this.generateResult = function(success,msg,data){
 		return {
 			success:success,
@@ -27,4 +28,14 @@ angular.module('AppUtils', [])
 			data:data
 		}
 	}
+
+
+	//移除数组中的对象
+	this.removeArrayItem = function(array,item){
+		for (var i = 0; i < array.length; i++) {
+			if(angular.equals(item, array[i]))
+				array.splice(i,1);
+		}
+	}
+
 });

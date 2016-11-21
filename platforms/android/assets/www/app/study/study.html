@@ -1,31 +1,52 @@
 <ion-view view-title="学习">
-	<!--顶部导航菜单左边按钮 menu定义了全局，这里忽略
-  	<ion-nav-buttons side="left">
-    	<button class="button button-icon button-clear ion-navicon-round" menu-toggle="left">
-    	</button>
- 	</ion-nav-buttons>-->
-
-	<!--顶部导航菜单右边按钮-->
  	<ion-nav-buttons side="right">
       	<button class="button button-icon button-clear ion-plus-round" ng-click="showAddStudy()">
     	</button>
     </ion-nav-buttons>
 
 	<ion-content >
-  		<div class="list">
-  			<div ng-repeat="studyItem in data.studyData">
-				<div class="item item-divider">
-					<span class="expect-label">支出金额:</span> <span class="expect-desc">{{studyItem.title}}</span>
-				</div>
-				<a class="item" >
-					<span class="expect-label">支出明细:</span> <span class="expect-desc">{{studyItem.desc}}</span>
-				</a>
-				<a class="item" >
-					<span class="expect-label">支出日期:</span> <span class="expect-desc">{{studyItem.date|date:'yyyy-M-dd'}}</span>
-				</a>
-	        </div>
+		<ion-list show-delete="isShowDelete"  show-reorder="isShowEdit" class="my-divider-list">
+		    <ion-item ng-repeat="studyItem in data.studyData">
 
-		</div>
+		    <div class="item item-divider">
+				<span class="expect-label">学习内容:</span> <span class="expect-desc">{{studyItem.title}}</span>
+			</div>
+			
+			<a class="item" >
+				<span class="expect-label">日期:</span> <span class="expect-desc">{{studyItem.date|date:'yyyy-M-dd'}}</span>
+			</a>
+
+			<a class="item" >
+				<span class="expect-label">学习明细:</span> <span class="expect-desc">{{studyItem.desc}}</span>
+			</a>
+
+		  
+		    <ion-delete-button class="ion-minus-circled" ng-click="items.splice($index, 1)">
+		    </ion-delete-button>
+		   	
+		   	<ion-reorder-button class="ion-edit" on-reorder="reorderItem(item, $fromIndex, $toIndex)">
+   			</ion-reorder-button>
+
+		  </ion-item>
+		</ion-list>
 	</ion-content>
+
+	<div class="tabs tabs-icon-top">
+		<a ng-if = "!isShowEdit" class="tab-item" >
+			<i  class="icon ion-edit" ng-click ="showEdit()"></i>编辑
+		</a>
+		<a ng-if = "isShowEdit"  class="tab-item">
+			<i class="icon ion-edit" ng-click ="showEdit()"></i>退出编辑
+		</a>	
+
+
+		<a ng-if = "!isShowDelete"  class="tab-item">
+			<i  class="icon ion-gear-a" ng-click ="showDelete()"></i>删除
+		</a>
+			
+		<a ng-if = "isShowDelete"  class="tab-item">
+			<i class="icon ion-gear-a" ng-click ="showDelete()"/></i>退出删除
+		</a>	
+	</div>
 </ion-view>
 	
