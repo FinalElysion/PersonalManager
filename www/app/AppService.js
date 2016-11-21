@@ -79,8 +79,8 @@ angular.module('app.services', [])
  	this.initAppInfo = function(){
  		console.log('init my app');
  		//use for dev
- 		$state.go('app.expect');
- 		//$state.go('login');
+ 		// $state.go('app.expect');
+ 		$state.go('login');
  	};
 
 }]);
