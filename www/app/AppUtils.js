@@ -1,19 +1,19 @@
 angular.module('AppUtils', [])
 
 .service('CommonUtils', function() {
-	CommonUtils = this;
+	app.CommonUtils = this;
 	/**
 	 * 生成带前缀的随机Id并返回
 	 * 
 	 * @param  prefix 前缀
-	 * @return (prefix + timestamp + baseChar的随机5位) 组成的一个id
+	 * @return (prefix + timestamp + baseChar的随机2位) 组成的一个id
 	 */
 	this.generateId = function(prefix){
 		var t = new Date().getTime(),
 			baseChar = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
 			i;
 
-		for(i = 0; i < 5; i++){
+		for(i = 0; i < 2; i++){
 			t += baseChar.charAt(Math.floor(Math.random()*26));
 		}
 
@@ -27,7 +27,7 @@ angular.module('AppUtils', [])
 			msg:msg,
 			data:data
 		}
-	}
+	};
 
 
 	//移除数组中的对象
@@ -36,6 +36,52 @@ angular.module('AppUtils', [])
 			if(angular.equals(item, array[i]))
 				array.splice(i,1);
 		}
+	};
+
+
+	//替换数组中的对象
+	this.updateArrayItem = function(array,currentItem,newItem){
+		for (var i = 0; i < array.length; i++) {
+			if(angular.equals(currentItem, array[i]))
+				array.splice(i,1,newItem);
+		}
+	};
+})
+
+.service('DBUtils', function() {
+	app.DBUtils = this;
+	var userDB;
+	var costDB;
+	var articleDB;
+	var expectDB;
+	var studyDB;
+
+	this.getUserDB = function(){
+		return userDB;
+	}
+
+	this.getCostDB = function(){
+		return costDB;
+	}
+
+	this.getArticleDB = function(){
+		return articleDB;
+	}
+
+	this.getExpectDB = function(){
+		return expectDB;
+	}
+
+	this.getStudyDB = function(){
+		return studyDB;
+	}
+
+	this.createDb = function(){
+		userDB = new PouchDB("userDB");
+		costDB = new PouchDB("costDB");
+		articleDB = new PouchDB("articleDB");
+		expectDB = new PouchDB("expectDB");
+		studyDB = new PouchDB("studyDB");
 	}
 
 });

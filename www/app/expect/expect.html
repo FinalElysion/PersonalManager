@@ -6,6 +6,7 @@
     </ion-nav-buttons>
 
 	<ion-content >
+		<div ng-if = "data.repectData.length <= 0" class="add-data-tip">你一个目标都没有<br/>╮(╯_╰)╭<br/>请添加新目标</div>
   		<div class="list">
   			<div ng-repeat="expectItem in data.repectData">
 				<div class="item item-divider" >

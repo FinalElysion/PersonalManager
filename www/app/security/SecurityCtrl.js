@@ -3,7 +3,7 @@ angular.module('app.controllers')
 .controller('SecurityCtrl', [ '$scope', '$state','SecurityService' ,'$ionicModal','$ionicLoading',
 function ($scope, $state,SecurityService, $ionicModal,$ionicLoading) {
  	$scope.data = {};
-
+ 	$scope.data.remember = false;
  	$scope.data.user = {name:'',password:''};
  	$scope.data.registUser = {name:'',password:''};
  		//init model
@@ -14,7 +14,23 @@ function ($scope, $state,SecurityService, $ionicModal,$ionicLoading) {
 		$scope.registModal = modal;
 	});
 
-
+	SecurityService.getLastUser()
+	.then(function(result){
+		if(result){
+			$scope.data.remember = result.remember;
+			if(result.remember){
+				$scope.data.remember = true;
+ 				$scope.data.user = {name:result.name,password:result.password};
+			}
+ 			else{
+ 				$scope.data.remember = false;
+ 				$scope.data.user = {name:result.name,password:''};
+ 			}
+		}else{
+			$scope.data.remember = false;
+		}
+		$scope.$apply();
+	})
 	$scope.showRegist = function(){
 		$scope.registModal.show();
 	};
@@ -38,7 +54,7 @@ function ($scope, $state,SecurityService, $ionicModal,$ionicLoading) {
  		if(user.name=='' ||user.password ==''){
  			return $ionicLoading.show({template:'请输入用户名和密码', noBackdrop: true, duration: 1500});
  		}
- 		SecurityService.login(user)
+ 		SecurityService.login(user,$scope.data.remember)
  		.then(function(result){
  			if(result.success){
 				$state.go('welcome');

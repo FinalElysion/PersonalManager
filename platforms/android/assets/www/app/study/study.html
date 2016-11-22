@@ -5,6 +5,7 @@
     </ion-nav-buttons>
 
 	<ion-content >
+		<div ng-if = "data.studyData.length <= 0" class="add-data-tip">你一条记录都做<br/>╮(╯_╰)╭<br/>快去加几条</div>
 		<ion-list show-delete="isShowDelete"  show-reorder="isShowEdit" class="my-divider-list">
 		    <ion-item ng-repeat="studyItem in data.studyData">
 

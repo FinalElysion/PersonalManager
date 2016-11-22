@@ -73,3 +73,11 @@
 .my-divider-list .item-content {
     padding: 0px 0px 0px 0px !important;
 }
+
+.add-data-tip{
+    color: #b6b6e6;
+    text-align: center;
+    font-size: xx-large;
+    padding-top: 50px;
+    line-height: 50px;
+}
