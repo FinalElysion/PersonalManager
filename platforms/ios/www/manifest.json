@@ -1,0 +1,12 @@
+
+{
+  "name": "Personal Manager",
+  "short_name": "Personal Manager",
+  "start_url": "index.html",
+  "display": "standalone",
+  "icons": [{
+    "src": "lm.png",
+    "sizes": "200x200",
+    "type": "image/png"
+  }]
+}

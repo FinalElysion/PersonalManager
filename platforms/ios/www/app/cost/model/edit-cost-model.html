@@ -1,0 +1,25 @@
+<ion-modal-view>
+	<ion-header-bar>
+		<div class="buttons">
+	  		<button class="button button-clear button-positive" ng-click="hideEditDialog()">取消</button>
+		</div>
+		<h1 class="title model-title">添加支出</h1>
+		<div class="buttons">
+	  		<button class="button button-clear button-positive" ng-click="editCost(data.editCost)">保存</button>
+		</div>
+	</ion-header-bar>
+	<ion-content >
+		<div class="list">
+			<label class="item item-input">
+				<input type="number" placeholder="支出金额" ng-model="data.editCost.money">
+			</label>
+			<label class="item item-input">
+				<input dateFormat type="date" placeholder="支出日期" ng-model="data.editCost.date">
+			</label>
+			<label class="item item-input">
+				<textarea placeholder="支出明细" class="common-text" ng-model="data.editCost.desc"></textarea>
+			</label>
+			
+		</div>  
+	</ion-content>
+</ion-modal-view>

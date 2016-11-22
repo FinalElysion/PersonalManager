@@ -1,0 +1,49 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <!-- 此处添加 ion-nav-bar是menu全局导航 -->
+    <!---->
+      <ion-nav-bar class="bar-stable" align-title="center">
+        <ion-nav-back-button>
+        </ion-nav-back-button>
+        
+        <ion-nav-buttons side="left">
+          <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+          </button>
+        </ion-nav-buttons>
+
+      </ion-nav-bar>
+     
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left" class="menu-bg">
+    <ion-header-bar class="bar-stable">
+      <!--菜单 header -->
+      <h1 class="title"></h1>
+    </ion-header-bar>
+    </ion-header-bar>
+    <ion-content>
+      <ion-list>
+
+        <ion-item menu-close href="#/app/expect" class="item-positive">
+          <i class="icon ion-ios-flower-outline menu-icon"></i><span class="menu-item-title">目标</span>
+        </ion-item>
+        <ion-item menu-close href="#/app/cost" class="item-energized">
+         <i class="icon ion-social-yen-outline menu-icon"></i><span><span class="menu-item-title">支出</span>
+        </ion-item>
+        <ion-item menu-close href="#/app/study" class="item-royal">
+          <i class="icon ion-university menu-icon"></i><span class="menu-item-title">学习</span>
+        </ion-item>
+        <ion-item menu-close href="#/app/article" class="item-balanced">
+          <i class="icon ion-chatbox-working menu-icon"></i><span class="menu-item-title">吐槽</span>
+        </ion-item>
+        <ion-item menu-close href="#/app/fgo" class="item-darkstable">
+          <i class="icon ion-star menu-icon"></i><span class="menu-item-title">FGO</span>
+        </ion-item>
+        <ion-item menu-close href="#/security/login" class="item-assertive">
+          <i class="icon ion-chatbox-working menu-icon"></i><span class="menu-item-title">注销</span>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

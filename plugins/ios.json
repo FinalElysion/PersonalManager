@@ -1,0 +1,30 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "xy.personalmanager"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "xy.personalmanager"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "xy.personalmanager"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "xy.personalmanager"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "xy.personalmanager"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "xy.personalmanager"
+        }
+    },
+    "dependent_plugins": {}
+}

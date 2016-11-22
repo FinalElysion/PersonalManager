@@ -1,0 +1,53 @@
+<ion-view view-title="学习">
+ 	<ion-nav-buttons side="right">
+      	<button class="button button-icon button-clear ion-plus-round" ng-click="showAddStudy()">
+    	</button>
+    </ion-nav-buttons>
+
+	<ion-content >
+		<div ng-if = "data.studyData.length <= 0" class="add-data-tip">你一条记录都做<br/>╮(╯_╰)╭<br/>快去加几条</div>
+		<ion-list show-delete="isShowDelete"  show-reorder="isShowEdit" class="my-divider-list">
+		    <ion-item ng-repeat="studyItem in data.studyData">
+
+		    <div class="item item-divider">
+				<span class="expect-label">学习内容:</span> <span class="expect-desc">{{studyItem.title}}</span>
+			</div>
+			
+			<a class="item" >
+				<span class="expect-label">日期:</span> <span class="expect-desc">{{studyItem.date|date:'yyyy-M-dd'}}</span>
+			</a>
+
+			<a class="item" >
+				<span class="expect-label">学习明细:</span> <span class="expect-desc">{{studyItem.desc}}</span>
+			</a>
+
+		  
+		    <ion-delete-button class="ion-minus-circled" ng-click="deleteStudy(studyItem)">
+		    </ion-delete-button>
+		   	
+		   	<ion-reorder-button class="ion-edit" ng-click="showEditStudyDialog(studyItem, $fromIndex, $toIndex)">
+   			</ion-reorder-button>
+
+		  </ion-item>
+		</ion-list>
+	</ion-content>
+
+	<div class="tabs tabs-icon-top">
+		<a ng-if = "!isShowEdit" class="tab-item" >
+			<i  class="icon ion-edit" ng-click ="showEdit()"></i>编辑
+		</a>
+		<a ng-if = "isShowEdit"  class="tab-item">
+			<i class="icon ion-edit" ng-click ="showEdit()"></i>退出编辑
+		</a>	
+
+
+		<a ng-if = "!isShowDelete"  class="tab-item">
+			<i  class="icon ion-gear-a" ng-click ="showDelete()"></i>删除
+		</a>
+			
+		<a ng-if = "isShowDelete"  class="tab-item">
+			<i class="icon ion-gear-a" ng-click ="showDelete()"/></i>退出删除
+		</a>	
+	</div>
+</ion-view>
+	

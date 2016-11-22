@@ -1,0 +1,25 @@
+
+.expect-label{
+    color: gray;
+}
+
+.expect-desc{
+    white-space: normal;
+}
+
+.respect-edit-btn{
+	padding-right: 15px;
+	font-size: 25px !important; 
+	color:#a5a5d6;
+}
+
+.respect-delete-btn{
+	padding-right: 20px;
+	color:#e25f5f;
+	font-size: 25px !important; 
+}
+
+.expect-btn-group{
+	position: absolute;
+    right: 0px;
+}

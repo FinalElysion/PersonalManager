@@ -1,0 +1,83 @@
+/* Empty. Add your own CSS if you like  @import 'layout.css';*/
+
+@import 'login.css';
+@import 'expect.css';
+.menu-icon {
+    font-size: 25px;
+}
+
+/*
+ *	menu.html
+ */
+.menu-item-title {
+    font-size: 20px;
+    padding-left: 20px;
+}
+
+.menu-bg {
+    background-image: url('../img/leimi.jpg');
+    background-size: cover;
+}
+
+/*
+ * common
+ */
+.model-title{
+	text-align: center!important;
+}
+
+.common-text{
+	height:200px;
+}
+
+.common-btn{
+    cursor: pointer;
+}
+
+.view-module-tltle{
+	text-align: center!important;
+}
+
+
+.welcome-image{
+	background-image: url('../img/leimi.jpg') !important;
+	background-size: cover;
+	height: 100%;
+	background-position: center;
+}
+
+.welcome-button{
+	bottom: 40px;
+    right: 20px;
+    opacity: 0.6;
+    position: absolute;
+}
+
+.app-version{
+	position: absolute;
+    bottom: 3px;
+    right: 3px;
+    color: white;
+}
+
+.app-info{
+	text-align: center;
+    position: relative;
+    top: 300px;
+    font-size: 40px;
+    color: cornflowerblue;
+    font-weight: bold;
+}
+    
+
+.my-divider-list .item-content {
+    padding: 0px 0px 0px 0px !important;
+}
+
+.add-data-tip{
+    color: #b6b6e6;
+    text-align: center;
+    font-size: xx-large;
+    padding-top: 50px;
+    line-height: 50px;
+}
