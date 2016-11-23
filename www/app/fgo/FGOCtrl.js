@@ -47,12 +47,12 @@ function($scope, FGOService, $ionicModal,$ionicSlideBoxDelegate,$ionicSideMenuDe
 		
 		FGOService.getMRCLData().then(function(result){
 			$scope.data.picTPLdata =  result;
-
 			return FGOService.getNoteData()
 			.then(function(result){
 				$scope.data.noteData  = result;
 				$ionicLoading.hide();
 				$scope.$apply();
+				$ionicSlideBoxDelegate.update();
 			})
 		})	
 		

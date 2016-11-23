@@ -64,10 +64,7 @@ angular.module('AppUtils', [])
 
 
 	this.initfgoData = function(){
-		return getDataVersion()
-		.then(function(result){
-			return beginUpdate(result);
-		})
+		return beginUpdate();
 	};
 
 	//获取当前数据版本
@@ -84,11 +81,13 @@ angular.module('AppUtils', [])
 	};
 
 
-	function beginUpdate(versionDoc){
-		var version = versionDoc.version + 1;
-		
+	function beginUpdate(){
+		var version = 0;
+		var versionDoc = null;
 		return getDataVersion()
 		.then(function(result){	
+			version = result.version + 1;
+			versionDoc =result;
 			console.log('init data : v' + version);
 			if (window._updateData) delete window._updateData;
 			return angularLoad.loadScript('data/data_v' + version + ".js")
@@ -104,7 +103,7 @@ angular.module('AppUtils', [])
 				return me.userDB.put(versionDoc);
 			})
 			.then(function(result){
-				return true;
+				return beginUpdate();
 			})
 		})
 		.catch(function(result){
