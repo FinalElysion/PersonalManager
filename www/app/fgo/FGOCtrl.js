@@ -85,6 +85,18 @@ function($scope, FGOService, $ionicModal,$ionicSlideBoxDelegate,$ionicSideMenuDe
 
 	initData();
 
+	$scope.doRefresh = function() {
+	 	FGOService.getNoteData()
+		.then(function(result){
+			$scope.data.noteData  = result;
+			$scope.$apply();
+			$ionicSlideBoxDelegate.update();
+			$scope.$broadcast('scroll.refreshComplete'); 
+		})
+	   	
+	    
+	};
+
 	$scope.changeTpL = function (type){
 		if(type == 'NOTE'){
 			$scope.data.template = TPL_NOTE;

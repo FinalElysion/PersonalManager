@@ -1,4 +1,5 @@
-
+<ion-refresher pulling-text="刷新数据中.." on-refresh="doRefresh()">
+</ion-refresher>
 <div ng-if = "data.noteData.length <= 0" class="add-data-tip"><br/>╮(╯_╰)╭<br/>请添加记录</div>
 <ion-list can-swipe="true">
   <ion-item ng-repeat="item in data.noteData">
