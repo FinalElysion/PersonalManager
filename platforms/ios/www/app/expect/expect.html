@@ -1,0 +1,26 @@
+<ion-view view-title="目标">
+	<!--顶部导航菜单右边按钮-->
+ 	<ion-nav-buttons side="right">
+      	<button class="button button-icon button-clear ion-plus-round" ng-click="showAddExpect()">
+    	</button>
+    </ion-nav-buttons>
+
+	<ion-content >
+		<div ng-if = "data.repectData.length <= 0" class="add-data-tip">你一个目标都没有<br/>╮(╯_╰)╭<br/>请添加新目标</div>
+  		<div class="list">
+  			<div ng-repeat="expectItem in data.repectData">
+				<div class="item item-divider" >
+					<span class="expect-label">目标:</span> <span class="expect-desc">{{expectItem.title}}</span>
+					<span class="expect-btn-group">
+						<i class="icon ion-trash-a common-btn respect-delete-btn" ng-click ="delteExpect(expectItem)"></i>
+						<i class="icon ion-edit common-btn respect-edit-btn" ng-click ="showEditExpect(expectItem)"></i>
+					</span>
+				</div>
+				<a class="item item-icon-right" >
+					<span class="expect-label">描述:</span> <span class="expect-desc">{{expectItem.desc}}</span>
+				</a>
+	        </div>
+		</div>
+	</ion-content>
+</ion-view>
+	

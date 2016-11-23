@@ -1,0 +1,39 @@
+<ion-view view-title="吐槽">
+	<!--顶部导航菜单左边按钮 menu定义了全局，这里忽略
+  	<ion-nav-buttons side="left">
+    	<button class="button button-icon button-clear ion-navicon-round" menu-toggle="left">
+    	</button>
+ 	</ion-nav-buttons>-->
+
+	<!--顶部导航菜单右边按钮-->
+ 	<ion-nav-buttons side="right">
+      	<button class="button button-icon button-clear ion-plus-round" ng-click="showArticle()">
+    	</button>
+    </ion-nav-buttons>
+
+	<ion-content >
+		<div ng-if = "data.articleData.length <= 0" class="add-data-tip"><br/>╮(╯_╰)╭<br/>赶紧吐槽一下吧</div>
+		<ion-list show-delete="false"
+          show-reorder="false"
+          can-swipe="true">
+		  <ion-item ng-repeat="articleItem in data.articleData"
+		            class="">
+
+		    <div><span class="expect-label">日期:</span> <span class="expect-desc">{{articleItem.date|date:'yyyy-M-dd'}}</span></div>
+		    <div><span class="expect-label">主要内容:</span> <span class="expect-desc">{{articleItem.desc}}</span></div>
+
+
+		    <ion-option-button class="button-info"
+		                       ng-click="showEditArticle(articleItem)">
+		      修改
+		    </ion-option-button>
+		    
+		    <ion-option-button class="button-assertive"
+		                       ng-click="deleteArticle(articleItem)">
+		      删除
+		    </ion-option-button>
+
+		  </ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>

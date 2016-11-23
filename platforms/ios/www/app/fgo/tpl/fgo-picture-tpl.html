@@ -1,0 +1,12 @@
+<ion-slide-box  active-slide="activeSlideIndex" show-pager="true" on-slide-changed = "productSlideChanged($index)">
+  <ion-slide  ng-repeat="item in data.picTPLdata" >
+	<div class="list card">
+		<div class="item">
+			<h2>{{item.desc1}} <span style ="color: gray;">{{item.desc0}}</span></h2>
+		</div>
+		<div class="item item-image">
+			<img src="{{item.url}}">
+		</div>
+    </div>
+  </ion-slide>
+</ion-slide-box>

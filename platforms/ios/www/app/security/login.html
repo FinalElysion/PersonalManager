@@ -1,0 +1,47 @@
+<ion-view title="Login">
+	<ion-content class="login-page">
+	
+		<div class="login-logo">
+			<img src="img/leimi.jpg" />
+		</div>
+		<div class="list list-inset">
+			<label class="item item-input">
+				<i class="icon ion-ios-person-outline placeholder-icon"></i>
+				<input type="text" placeholder="用户名" ng-model="data.user.name">
+			</label>
+			<label class="item item-input">
+				<i class="icon ion-ios-locked-outline placeholder-icon"></i>
+			 	<input type="password" placeholder="密码" ng-model="data.user.password">
+			</label>
+
+			<ul class="list">
+
+			 <li class="item item-toggle">
+			     记住密码
+			     <label class="toggle toggle-balanced">
+			       <input type="checkbox" ng-model="data.remember">
+			       <div class="track">
+			         <div class="handle"></div>
+			       </div>
+			     </label>
+			  </li>
+			</ul>	
+			<button class="button button-block button-positive" ng-click="login(data.user)">登陆</button>
+			<div class="row">
+				<div class="col col-15 right-position">
+					<button class="button button-clear button-positive" ng-click="showRegist()">注册</button>
+				</div>
+				<div class="col"></div>
+				
+				<div class="col col-75 right-position">
+					<button class="button button-clear button-positive" >忘记密码</button>
+				</div>
+			</div>
+		</div>
+
+		
+           
+  
+			
+	</ion-content>
+</ion-view>
