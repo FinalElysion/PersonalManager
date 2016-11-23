@@ -6,7 +6,7 @@ angular.module('app.services')
 	
 	this.getArticleData = function(){
 		currentData = [];
-		return DBUtils.getArticleDB().allDocs({include_docs: true})
+		return DBUtils.articleDB.allDocs({include_docs: true})
 	    .then(function (result) {
 	    	for (var i = 0; i < result.rows.length; i++) {
 	    		currentData.push(result.rows[i].doc);
@@ -19,7 +19,7 @@ angular.module('app.services')
 
 
 	this.addArticleData = function(data){
-		return DBUtils.getArticleDB().put({
+		return DBUtils.articleDB.put({
 			_id:CommonUtils.generateId('ART'),
 			type:'ArticleList',
 			desc:data.desc,
@@ -34,7 +34,7 @@ angular.module('app.services')
 	};
 
 	this.removeArticleData = function(data){
-		var articleDB = DBUtils.getArticleDB()
+		var articleDB = DBUtils.articleDB
 		return articleDB.get(data._id)
 		.then(function(result){
 			return articleDB.remove(result);
@@ -46,7 +46,7 @@ angular.module('app.services')
 
 
 	this.editArticleData = function(data,currentItem){
-		var articleDB = DBUtils.getArticleDB();
+		var articleDB = DBUtils.articleDB;
 		return articleDB.get(data._id)
 		.then(function(result){
 			return articleDB.put({

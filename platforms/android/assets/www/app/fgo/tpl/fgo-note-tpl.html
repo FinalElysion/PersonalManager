@@ -1,0 +1,20 @@
+
+<div ng-if = "data.noteData.length <= 0" class="add-data-tip"><br/>╮(╯_╰)╭<br/>请添加记录</div>
+<ion-list can-swipe="true">
+  <ion-item ng-repeat="item in data.noteData">
+
+    <div><span class="expect-label">note:</span> <span class="expect-desc">{{item.desc}}</span></div>
+
+
+    <ion-option-button class="button-info"
+                       ng-click="showEditNote(item)">
+      修改
+    </ion-option-button>
+    
+    <ion-option-button class="button-assertive"
+                       ng-click="deleteNote(item)">
+      删除
+    </ion-option-button>
+
+  </ion-item>
+</ion-list>

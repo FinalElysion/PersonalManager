@@ -6,7 +6,7 @@ angular.module('app.services')
 	
 	this.getStudyData = function(){
 		currentData = [];
-		return DBUtils.getStudyDB().allDocs({include_docs: true})
+		return DBUtils.studyDB.allDocs({include_docs: true})
 	    .then(function (result) {
 	    	for (var i = 0; i < result.rows.length; i++) {
 	    		currentData.push(result.rows[i].doc);
@@ -19,7 +19,7 @@ angular.module('app.services')
 
 
 	this.addStudyData = function(data){
-		return DBUtils.getStudyDB().put({
+		return DBUtils.studyDB.put({
 			_id:CommonUtils.generateId('STU'),
 			type:'StudyList',
 			title:data.title,
@@ -36,7 +36,7 @@ angular.module('app.services')
 
 	
 	this.removeStudyData = function(data){
-		var studyDB = DBUtils.getStudyDB()
+		var studyDB = DBUtils.studyDB
 		return studyDB.get(data._id)
 		.then(function(result){
 			return studyDB.remove(result);
@@ -47,7 +47,7 @@ angular.module('app.services')
 	};
 
 	this.editStudyData = function(data,currentItem){
-		var studyDB = DBUtils.getStudyDB();
+		var studyDB = DBUtils.studyDB;
 		return studyDB.get(data._id)
 		.then(function(result){
 			return studyDB.put({

@@ -3,7 +3,7 @@ angular.module('app.services')
 .service('SecurityService', ['$state','CommonUtils','$q','DBUtils', function ($state,CommonUtils,$q,DBUtils) {
 	
 	this.regist = function(user){
-		var userDB = DBUtils.getUserDB();
+		var userDB = DBUtils.userDB;
 
 		return checkUserIsExit(user)
 		.then(function(result){
@@ -19,7 +19,7 @@ angular.module('app.services')
 	};
 
 	var checkUserIsExit = function(user){
-		return DBUtils.getUserDB().get(user.name)
+		return DBUtils.userDB.get(user.name)
 		.then(function(result){
 			return true;
 		})
@@ -30,7 +30,7 @@ angular.module('app.services')
 
 	this.login = function(user,remember){
 
-		var userDB = DBUtils.getUserDB();
+		var userDB = DBUtils.userDB;
 		
 		return userDB.get(user.name)
 		.then(function(result){
@@ -48,7 +48,7 @@ angular.module('app.services')
 	}
   	
   	var saveLastUser = function(user,remember){
-  		var userDB = DBUtils.getUserDB();
+  		var userDB = DBUtils.userDB;
 		return userDB.get('lastUser')
 		.then(function(result){
 			return userDB.put({_id:'lastUser',name:user.name,password:user.password,remember:remember,_rev:result._rev})
@@ -59,7 +59,7 @@ angular.module('app.services')
   	};
 
   	this.getLastUser = function(){
-  		var userDB = DBUtils.getUserDB();
+  		var userDB = DBUtils.userDB;
   		return userDB.get('lastUser')
 		.catch(function(result){
 			return null;

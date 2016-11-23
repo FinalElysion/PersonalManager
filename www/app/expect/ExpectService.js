@@ -7,7 +7,7 @@ angular.module('app.services')
 	 */
 	this.getExpectData = function(){
 		currentData = [];
-		return DBUtils.getExpectDB().allDocs({include_docs: true})
+		return DBUtils.expectDB.allDocs({include_docs: true})
 	    .then(function (result) {
 	    	for (var i = 0; i < result.rows.length; i++) {
 	    		currentData.push(result.rows[i].doc);
@@ -22,7 +22,7 @@ angular.module('app.services')
 	 添加目标数据
 	 */
 	this.addExpectData = function(data){
-		return DBUtils.getExpectDB().put({
+		return DBUtils.expectDB.put({
 			_id:CommonUtils.generateId('EXP'),
 			type:'ExpectList',
 			title:data.title,
@@ -40,7 +40,7 @@ angular.module('app.services')
 	 * 删除目标数据
 	 */
 	this.removeExpectData = function(data){
-		var expectDB = DBUtils.getExpectDB()
+		var expectDB = DBUtils.expectDB
 		return expectDB.get(data._id)
 		.then(function(result){
 			return expectDB.remove(result);
@@ -54,7 +54,7 @@ angular.module('app.services')
      编辑目标数据
 	*/
 	this.editExpectData = function(data,currentItem){
-		var expectDB = DBUtils.getExpectDB();
+		var expectDB = DBUtils.expectDB;
 		return expectDB.get(data._id)
 		.then(function(result){
 			return expectDB.put({

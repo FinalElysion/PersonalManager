@@ -1,0 +1,18 @@
+<ion-modal-view>
+	<ion-header-bar>
+		<div class="buttons">
+	  		<button class="button button-clear button-positive" ng-click="hideAddNote()">取消</button>
+		</div>
+		<h1 class="title model-title">添加Note</h1>
+		<div class="buttons">
+	  		<button class="button button-clear button-positive" ng-click="addNote(data.newNote)">提交</button>
+		</div>
+	</ion-header-bar>
+	<ion-content >
+		<div class="list">
+			<label class="item item-input">
+				<textarea placeholder="Note" class="common-text" ng-model="data.newNote.desc"></textarea>
+			</label>
+		</div>  
+	</ion-content>
+</ion-modal-view>

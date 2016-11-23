@@ -6,7 +6,7 @@ angular.module('app.services')
 	
 	this.getCostData = function(){
 		currentData = [];
-		return DBUtils.getCostDB().allDocs({include_docs: true})
+		return DBUtils.costDB.allDocs({include_docs: true})
 	    .then(function (result) {
 	    	for (var i = 0; i < result.rows.length; i++) {
 	    		currentData.push(result.rows[i].doc);
@@ -18,7 +18,7 @@ angular.module('app.services')
 	};
 
 	this.addCostData = function(data){
-		return DBUtils.getCostDB().put({
+		return DBUtils.costDB.put({
 			_id:CommonUtils.generateId('COS'),
 			type:'CostList',
 			money:data.money,
@@ -34,7 +34,7 @@ angular.module('app.services')
 	};
 
 	this.removeCostData = function(data){
-		var costDB = DBUtils.getCostDB()
+		var costDB = DBUtils.costDB
 		return costDB.get(data._id)
 		.then(function(result){
 			return costDB.remove(result);
@@ -46,7 +46,7 @@ angular.module('app.services')
 
 
 	this.editCostData = function(data,currentItem){
-		var costDB = DBUtils.getCostDB();
+		var costDB = DBUtils.costDB;
 		return costDB.get(data._id)
 		.then(function(result){
 			return costDB.put({

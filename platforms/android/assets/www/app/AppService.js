@@ -21,37 +21,5 @@ angular.module('app.services', [])
 }])
 //定义一个全局常量 使用时先注入到要使用的模块
 .constant("AppConstant", {
-	version:1.0,
-	FGOData:{
-		cailiao:[{
-			desc0:'弓之修炼场',
-			desc1:'每日材料本',
-			url:'img/fgo/gong.jpg'
-		},{
-			desc0:'枪之修炼场',
-			desc1:'每日材料本',
-			url:'img/fgo/qiang.jpg'
-		},{
-			desc0:'狂之修炼场',
-			desc1:'每日材料本',
-			url:'img/fgo/kuang.jpg'
-		},{
-			desc0:'骑之修炼场',
-			desc1:'每日材料本',
-			url:'img/fgo/qi.jpg'
-		},{
-			desc0:'术之修炼场',
-			desc1:'每日材料本',
-			url:'img/fgo/shu.jpg'
-		},{
-			desc0:'杀之修炼场',
-			desc1:'每日材料本',
-			url:'img/fgo/sha.jpg'
-		},{
-			desc0:'剑之修炼场',
-			desc1:'每日材料本',
-			url:'img/fgo/jian.jpg'
-		}]
-
-	}
+	version:2.0
 });

@@ -1,0 +1,91 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "angular-load",
+        "scope": null,
+        "escapedName": "angular-load",
+        "name": "angular-load",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "I:\\project\\PersonalManager"
+    ]
+  ],
+  "_from": "angular-load@latest",
+  "_id": "angular-load@0.4.1",
+  "_inCache": true,
+  "_location": "/angular-load",
+  "_nodeVersion": "5.4.0",
+  "_npmUser": {
+    "name": "urish",
+    "email": "uri@urish.org"
+  },
+  "_npmVersion": "3.3.12",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "angular-load",
+    "scope": null,
+    "escapedName": "angular-load",
+    "name": "angular-load",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/angular-load/-/angular-load-0.4.1.tgz",
+  "_shasum": "cc07dd668b5177368bfaad804108a5b6ab7bd76f",
+  "_shrinkwrap": null,
+  "_spec": "angular-load",
+  "_where": "I:\\project\\PersonalManager",
+  "bugs": {
+    "url": "https://github.com/urish/angular-load/issues"
+  },
+  "dependencies": {},
+  "description": "angular-load ============",
+  "devDependencies": {
+    "coveralls": "~2.11.0",
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-uglify": "~0.5.1",
+    "grunt-karma": "~0.8.2",
+    "karma": "~0.12.1",
+    "karma-coverage": "~0.2.0",
+    "karma-jasmine": "~0.2.1",
+    "karma-phantomjs-launcher": "~0.1.1",
+    "matchdep": "~0.3.0"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "cc07dd668b5177368bfaad804108a5b6ab7bd76f",
+    "tarball": "https://registry.npmjs.org/angular-load/-/angular-load-0.4.1.tgz"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "gitHead": "3cbe00e4c83373615ef801bc20ff5dceb6ebc4a6",
+  "homepage": "https://github.com/urish/angular-load#readme",
+  "main": "angular-load.js",
+  "maintainers": [
+    {
+      "name": "urish",
+      "email": "uri@urish.org"
+    }
+  ],
+  "name": "angular-load",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/urish/angular-load.git"
+  },
+  "scripts": {
+    "build": "grunt build",
+    "test": "grunt test"
+  },
+  "version": "0.4.1"
+}
