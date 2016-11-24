@@ -6,6 +6,7 @@
     </ion-nav-buttons>
 
 	<ion-content >
+
 		<div ng-if = "data.repectData.length <= 0" class="add-data-tip">你一个目标都没有<br/>╮(╯_╰)╭<br/>请添加新目标</div>
   		<div class="list">
   			<div ng-repeat="expectItem in data.repectData">
@@ -21,6 +22,13 @@
 				</a>
 	        </div>
 		</div>
+
+		<!-- directive:app-search --> 
+		<!-- 此处为引用标签的方法
+		<app-search search-field-model="data.searchType"></app-search>
+		 <div app-search ></div>
+		<div class="app-search"></div>
+		-->
 	</ion-content>
 </ion-view>
 	

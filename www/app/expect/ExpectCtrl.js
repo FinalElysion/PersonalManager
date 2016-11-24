@@ -9,6 +9,8 @@ angular.module('app.controllers')
 		$scope.data.editExpect = null;
 		$scope.data.currentItem = null;
 		$scope.data.repectData = [];
+		$scope.data.searchType = 'name';
+		$scope.naomi = { name: 'Naomi', address: '1600 Amphitheatre' };
 		//init model
 		$ionicModal.fromTemplateUrl('app/expect/model/add-expect-model.html', {
 			scope: $scope,
