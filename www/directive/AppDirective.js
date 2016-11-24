@@ -47,7 +47,7 @@ angular.module('AppDirective', [])
 		    $scope – 与当前元素结合的scope
 			$element – 当前的元素
 			$attrs – 当前元素的属性对象
-			$transclude – 一个预先绑定到当前转置scope的转置linking function :function(cloneLinkingFn)
+			$transclude 
         */
         controller: ['$scope', function($scope){
         	//angular.extend($scope.configRectangleParam, $scope.$parent.configRectangleParam);
